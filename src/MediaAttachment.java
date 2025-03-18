@@ -8,11 +8,11 @@ public class MediaAttachment extends Attachment{
 
     @Override
     public void preview() {
-        System.out.println(super.toString() + "\nOpening MediaAttachment(Size: " + size_Byte + " bytes)");
+        System.out.println("Opening MediaAttachment(Size: " + size_Byte + " bytes)");
     }
 
     @Override
     public String toString() {
-        return super.toString() + "\nMediaAttachment" + size_Byte + " bytes";
+        return "MediaAttachment " +super.getUniqueID()+ " by " + super.getAuthor() + "\nsize: " + size_Byte + " bytes";
     }
 }
