@@ -1,5 +1,5 @@
 public class FileAttachment extends Attachment{
-    private int size_Byte;
+    private final int size_Byte;
     //constructor
     public FileAttachment(int ID, String author, int size_Byte) {
         super(ID, author);
@@ -15,6 +15,6 @@ public class FileAttachment extends Attachment{
 
     @Override
     public String toString() {
-        return "FileAttachment[ID= '" +super.getUniqueID()+ "', author= '" + super.getAuthor() + "', size= '" + size_Byte + " bytes'";
+        return "FileAttachment(ID= '" +super.getUniqueID()+ "', author= '" + super.getAuthor() + "', size= '" + size_Byte + " bytes')";
     }
 }

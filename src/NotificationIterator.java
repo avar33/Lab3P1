@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class NotificationIterator implements NotificationIteratorIF {
-    private List<Notification> notifications; //hold notification created
+    private final List<Notification> notifications; //hold notification created
     private int index = 0;
 
     //constructor with list to iterate through

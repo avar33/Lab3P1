@@ -1,5 +1,5 @@
 public class MediaAttachment extends Attachment{
-    private int size_Byte;
+    private final int size_Byte;
     //constructor
     public MediaAttachment(int ID, String author, int size_Byte) {
         super(ID, author);
@@ -16,6 +16,6 @@ public class MediaAttachment extends Attachment{
 
     @Override
     public String toString() {
-        return "MediaAttachment[ID= '" +super.getUniqueID()+ "', author= '" + super.getAuthor() + "', size= '" + size_Byte + " bytes'";
+        return "MediaAttachment(ID= '" +super.getUniqueID()+ "', author= '" + super.getAuthor() + "', size= '" + size_Byte + " bytes')";
     }
 }

@@ -1,27 +1,29 @@
 public class Demo {
     public static void main(String[] args) {
+        NotificationBar notificationBar = new NotificationBar();
         // PHASE 1
         System.out.println("PHASE 1:");
-        NotificationCollection notifications = new NotificationCollection();
-        // adds 10 new notifications into a collection
+        // adds 10 new notifications into the notification collection declared in notification bar
         for (int i = 0; i < 10; i++) {
-            notifications.addItem("notification" + (i+1)); //i+1 so notifs will be numbered 1-10
+            NotificationBar.notifications.addItem("Notification " + (i+1)); //i+1 so notifs will be numbered 1-10
         }
 
         //display notifications just added
+        notificationBar.printNotifications();
+
+        //attachments to be added
+        FileAttachment fAtt1 = new FileAttachment(100, "Rich", 16);
+        MediaAttachment mAtt1 = new MediaAttachment(150, "Amy", 24);
+
+        // PHASE 2
+        System.out.println("PHASE 2:");
+        // iterates through the existing 10 notifications
         for (int i = 0; i < 10; i++) {
-            System.out.println("Item " + (i+1) + ": " + notifications.getItem(i).getContent());
+            if (i < 3){ NotificationBar.notifications.setAttachment(mAtt1, i);} // if notifications 0-2 (numbered 1-3) attach media
+            else if (i == 4 || i == 8) {NotificationBar.notifications.setAttachment(fAtt1, i);} // if notifications numbered 5 or 9 attach file
         }
-        Attachment att1 = new Attachment(000, "Bob");
-        FileAttachment fAtt1 = new FileAttachment(001, "Rich", 16);
-        MediaAttachment mAtt1 = new MediaAttachment(002, "Andy", 24);
 
-//        System.out.println("Testing Attachment: " + att1.toString());
-//        att1.preview();
-//        System.out.println("Testing FileAttachment: " + fAtt1.toString());
-//        fAtt1.preview();
-//        System.out.println("Testing MediaAttachment: " + mAtt1.toString());
-//        mAtt1.preview();
-
+        //display all notifications
+        notificationBar.printNotifications();
     }
 }

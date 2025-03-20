@@ -1,6 +1,6 @@
 public class Attachment {
-    private int uniqueID;
-    private String author;
+    private final int uniqueID;
+    private final String author;
 
     // Constructor
     public Attachment(int uniqueID, String author) {
@@ -19,7 +19,7 @@ public class Attachment {
 
     @Override
     public String toString() {
-        return "Attachment[uniqueID= '" + uniqueID + "', author= '" + author + "']";
+        return "Attachment(uniqueID= '" + uniqueID + "', author= '" + author + "')";
     }
 
     public void preview(){
