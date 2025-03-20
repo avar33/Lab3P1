@@ -4,7 +4,7 @@ public class NotificationBar {
     public void printNotifications(){
         NotificationIteratorIF iterator = notifications.createIterator();
         while(iterator.hasNext()){
-            Notification n = iterator.next(); //returns curent moves to next
+            Notification n = iterator.next(); //returns current moves to next
             System.out.println(n.getContent());
         }
     }
