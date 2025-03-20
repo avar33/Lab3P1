@@ -9,17 +9,12 @@ public class Notification {
 
     public String getContent() {
         if (a != null){
-            return "Notification[content='" + content + "', attachments=" + a + "]";
+            return content + "[" + a + "]";
         }
-        return content;
+        return content + "[attachments= none]";
     }
 
     public void setAttachment (Attachment a) {
         this.a = a;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Notification[content='" + content + "', attachments=" + a + "]";
-//    }
 }
