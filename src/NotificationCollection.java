@@ -1,4 +1,3 @@
-import javax.management.NotificationListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +10,9 @@ public class NotificationCollection implements NotificationCollectionIF {
     }
 
     public Notification getItem(int index) {
+        if (index < 0 || index >= notifications.size()) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
         return notifications.get(index);
     }
 
@@ -22,6 +24,7 @@ public class NotificationCollection implements NotificationCollectionIF {
         return notifications.size();
     }
 
-    //TODO: FINISH
-    public void setAttachment(Attachment a, int index){}
+    public void setAttachment(Attachment a, int index){
+        notifications.get(index).setAttachment(a);
+    }
 }

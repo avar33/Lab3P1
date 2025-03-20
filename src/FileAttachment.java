@@ -3,15 +3,18 @@ public class FileAttachment extends Attachment{
     //constructor
     public FileAttachment(int ID, String author, int size_Byte) {
         super(ID, author);
+        if (size_Byte < 0) {
+            throw new IllegalArgumentException("File size cannot be negative.");
+        }
         this.size_Byte = size_Byte;
     }
     @Override
     public void preview() {
-        System.out.println("Opening FileAttachment(Size: " + size_Byte + " bytes)");
+        System.out.println("Previewing FileAttachment(Size: " + size_Byte + " bytes)");
     }
 
     @Override
     public String toString() {
-        return "FileAttachment " +super.getUniqueID()+ " by " + super.getAuthor() + "\n size: " + size_Byte + " bytes";
+        return "FileAttachment[ID= '" +super.getUniqueID()+ "', author= '" + super.getAuthor() + "', size= '" + size_Byte + " bytes'";
     }
 }
